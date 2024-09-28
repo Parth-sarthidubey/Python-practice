@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
 
 
@@ -17,10 +18,14 @@ def get_driver():
     driver.get("http://automated.pythonanywhere.com")
     return driver
 
+def text_cleaner(text):
+    output=float(text.split(": ")[1])
+    return output
 
 def main():
     driver = get_driver()
-    element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[1]")
-    return element.text
+    time.sleep(3)
+    element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[2]")
+    return text_cleaner(element.text)
 
 print(main())
