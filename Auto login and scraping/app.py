@@ -31,10 +31,10 @@ def main():
     driver.find_element(by="id", value="id_password").send_keys("automatedautomated" + Keys.RETURN)
     time.sleep(2)
 
-    driver.find_element(by="xpath", value="/html/body/nav/div/a").click()
-    time.sleep(2)
+    driver.find_element(by="xpath", value="/html/body/nav/div/a").click()    
+    time.sleep(3)
 
-    element=driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[2]").text
+    element=driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[2]").text           
     return text_cleaner(element)
     
     
